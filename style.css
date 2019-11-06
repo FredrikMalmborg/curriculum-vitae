@@ -1,0 +1,72 @@
+:root {
+    --primary: crimson;
+    --secondary: aqua;
+    --standard: 25rem
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    margin: auto;
+
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(6, var(--standard));
+    grid-template-rows: repeat(6, var(--standard));
+    height: 100vh;
+
+    transform: rotate(45deg);
+}
+.cover {
+    position: absolute;
+    background: #333;
+    width: 50vw;
+    height: 100vh;
+    z-index: 1;
+    opacity: 0;
+}
+
+
+.container {
+    width: var(--standard);
+    height: var(--standard);
+
+
+    /* background: crimson; */
+    overflow: hidden;
+    border: 0.2rem solid #fff0;
+}
+.container:hover {
+    transition: .3s ease;
+    box-shadow: 0 0 1rem .5rem white;
+    z-index: 1;
+}
+.container:hover .contContent {
+    background: white;
+}
+
+.container > *{
+    transform: rotate(-45deg) scale(1.5);
+}
+.contContent {
+    width: var(--standard);
+    height: var(--standard);
+    
+    background: crimson;
+
+    /* background: url("http://lorempixel.com/500/500/cats/");
+    background-size: contain; */
+
+}
