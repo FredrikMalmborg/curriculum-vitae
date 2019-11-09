@@ -1,72 +1,97 @@
 :root {
-    --primary: crimson;
-    --secondary: aqua;
-    --standard: 25rem
+    --primary: #e1ad01;
+    --secondary: #444;
+    --standard: 20vw;
 }
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
-
+html {
+    font-size: 100%;
+}
 body {
-    overflow: hidden;
-    width: 100%;
+    font-size: 1.1rem;
+    letter-spacing: .08rem;
+    line-height: 1.3rem;
+    
+    overflow-x: hidden;
+    background: var(--primary);
+    color: var(--secondary);
+}
+
+/*-- HEADER CONTENT --*/
+
+nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+
+    padding: .5rem;
+    background: var(--secondary);
+    opacity: .8;
+}
+nav div {
+    width: 4rem;
+    height: 4rem;
+
+
+    background: #455ee0;
+}
+.logo {
+    height: 4rem;
+    width:60%;
+
+    background: #880000;
 }
 
+/*-- MAIN CONTENT --*/
 main {
-    margin: auto;
-
-    display: grid;
-    align-content: center;
-    justify-items: center;
-    grid-template-columns: repeat(6, var(--standard));
-    grid-template-rows: repeat(6, var(--standard));
-    height: 100vh;
-
-    transform: rotate(45deg);
+    position: relative;
+    margin-top: 10rem;
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
-.cover {
+main hr {
     position: absolute;
+    transform: rotate(0deg);
+
+    height: .5rem;
+    width: 50%;
     background: #333;
-    width: 50vw;
-    height: 100vh;
-    z-index: 1;
-    opacity: 0;
+
+    border: none;
+    z-index: -1;
+}
+
+article {
+    position: relative;
+}
+.content{
+    position: absolute;
+    display: none;
+
 }
 
 
-.container {
-    width: var(--standard);
-    height: var(--standard);
-
-
-    /* background: crimson; */
-    overflow: hidden;
-    border: 0.2rem solid #fff0;
-}
-.container:hover {
-    transition: .3s ease;
-    box-shadow: 0 0 1rem .5rem white;
-    z-index: 1;
-}
-.container:hover .contContent {
-    background: white;
-}
-
-.container > *{
-    transform: rotate(-45deg) scale(1.5);
-}
-.contContent {
+.thumbnail {
     width: var(--standard);
     height: var(--standard);
     
-    background: crimson;
-
-    /* background: url("http://lorempixel.com/500/500/cats/");
-    background-size: contain; */
-
+    background: #333;
+    border: 0rem solid var(--primary);
+    z-index: 0;
+    
+    transform: rotate(45deg);
+    border-radius:  100%;
+    transition: .25s ease;
+}
+.thumbnail:hover {
+    box-shadow: 0 0 .5rem .5rem var(--primary);
+    z-index: 1;
+    border-radius:  0%;
+    
+    transform: rotate(45deg) scale(1.2);
 }
