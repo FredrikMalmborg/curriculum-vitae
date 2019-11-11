@@ -1,0 +1,18 @@
+.hori-hr {
+    margin: auto;
+    position: absolute;
+    transform: rotate(0deg);
+  
+    height: 0.5rem;
+    width: 80%;
+    background: var(--secondary);
+  
+    border: none;
+    z-index: -2;
+  }
+  
+  .veri-hr {
+    display: none;
+  }
+
+/* --- */
