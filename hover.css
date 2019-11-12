@@ -1,0 +1,7 @@
+.thumbnail:hover {
+    border: 1rem double var(--secondary);
+    background: var(--primary);
+}
+.thumbnail-active:hover{
+    border: .1rem solid var(--primary);
+}
