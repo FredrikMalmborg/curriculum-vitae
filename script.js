@@ -42,8 +42,9 @@ function mouseEvents() {
 
   for (let j = 0; j < jobbList.length; j++) {
       $(jobbList[j]).click(function() {
-        $(jobbDescriptionList[j]).fadeToggle(250);
-
+        $(jobbDescriptionList[j]).toggle(0);
+        $(jobbList[j]).toggleClass("jobbOpen");
+        
         console.log("bread " + j);
     });
   }
@@ -63,9 +64,6 @@ function randomizeColor() {
     accentArr = ["#ffffff", "#333333", "#4D73B3", "#4DB38B"];
   colorIndex = Math.floor(Math.random() * primeArr.length);
   document.documentElement.style.setProperty("--primary", primeArr[colorIndex]);
-  document.documentElement.style.setProperty(
-    "--secondary",
-    secondArr[colorIndex]
-  );
+  document.documentElement.style.setProperty( "--secondary",secondArr[colorIndex]);
   document.documentElement.style.setProperty("--accent", accentArr[colorIndex]);
 }

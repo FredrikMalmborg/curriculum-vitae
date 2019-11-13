@@ -200,9 +200,8 @@ hr {
   min-height: 15rem;
 
 
-
   background: var(--secondary);
-  display: inline-block;
+  /* display: inline-block; */
 
   transform: rotate(45deg);
 }
@@ -210,27 +209,33 @@ hr {
 .right-title,
 .left-title {
   padding: 0.5rem;
+  width: 60%;
   background: var(--secondary);
   color: var(--primary);
+  
 }
 .right-text,
 .right-title {
-  text-align: right;
+    text-align: right;
+    margin-left: auto;
+    /* border-radius: 25vw 0 0 0; */
+}
+
+.left-text,
+.left-title {
+  text-align: left;
+  margin-right:20vw;
+  margin-right: auto;
+  /* border-radius: 0 25vw 0 0; */
 }
 
 .right-text,
 .left-text {
-  /* border:1px solid white; */
-
   overflow: hidden;
   padding: 1rem;
+
+  shape-inside: circle(50%);
 }
-/* .right-text {
-  border-radius: 25vw 0 0 0;
-}
-.left-text {
-  border-radius: 0 25vw 0 0;
-} */
 
 /*--- footer ---*/
 
