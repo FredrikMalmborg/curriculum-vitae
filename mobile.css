@@ -1,4 +1,4 @@
-/*__________*/
+ /*__________*/
 /*---MAIN---*/
 /*__________*/
 
@@ -31,15 +31,19 @@
 .logo {
   position: absolute;
   width: 100%;
-
+  
   text-align: center;
   text-transform: uppercase;
   font-size: 0.7rem;
   border: 0rem solid var(--primary);
   margin: auto;
-
+  
   transform: rotate(0deg) translateY(0%);
   transform-origin:center;
+}
+h1:first-child {
+  margin-top: 1rem;
+  
 }
 h1::before,
 h1::after {
@@ -47,29 +51,36 @@ h1::after {
 }
 
 .gall {
-  
-  margin-bottom: 0rem;
+}
+
+.gallery-wrapper {
+  flex-direction: column;
+}
+.gallery-wrapper > * {
+  margin: 2.5rem 0;
 }
 .right-title,
 .left-title {
   padding: 0.5rem;
-  width:100%;
+  
   background: var(--secondary);
   color: var(--primary);
-  border-top: .1rem solid var(--primary);
-  
 }
 .right-text,
-.right-title {
-    border-radius: 0;
-    border-left: .1rem solid var(--primary);
-  }
-  
-  .left-text,
-  .left-title {
-    border-radius: 0;
-    border-right: .1rem solid var(--primary);
+.right-title,
+.left-text,
+.left-title {
+  border-radius: 0;
+  width:100vw;
 }
+.right-title, .left-title {
+  text-align: center;
+}
+.right-text, .left-text {
+  padding: 1rem;
+  text-align: left;
+}
+
 
 /*________________*/
 /*---EXPERIENCE---*/

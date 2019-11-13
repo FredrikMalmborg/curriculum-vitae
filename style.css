@@ -240,8 +240,6 @@ hr {
 .left-text {
   overflow: hidden;
   padding: 1rem;
-
-  shape-inside: circle(50%);
 }
 
 /*--- footer ---*/
