@@ -42,7 +42,7 @@ function mouseEvents() {
 
   for (let j = 0; j < jobbList.length; j++) {
       $(jobbList[j]).click(function() {
-        $(jobbDescriptionList[j]).toggle(0);
+        $(jobbDescriptionList[j]).toggle(200);
         $(jobbList[j]).toggleClass("jobbOpen");
         
         console.log("bread " + j);
