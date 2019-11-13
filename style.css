@@ -30,7 +30,7 @@
   --standard: 15vw;
 }
 
-@media (light-level: washed) {
+@media (light-level: dim) {
   :root {
     --primary: #fff;
     --secondary: #000;
