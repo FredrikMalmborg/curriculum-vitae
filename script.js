@@ -19,13 +19,10 @@ $("content").css("height", "200vh");
 function globalVariables() {
   articleList = $("article").find(".thumbnail");
   contentList = $("article").find(".content");
-  jobbList = $(".jobb").find("h4");
-  jobbDescriptionList = $(".jobb").find("p");
+  jobbList = $(document).find(".jobb");
 
-    console.log(jobbList)
-    console.log(jobbDescriptionList)
-    console.log(articleList)
-
+  console.log(jobbList)
+  
 }
 
 function mouseEvents() {
@@ -41,11 +38,10 @@ function mouseEvents() {
   }
 
   for (let j = 0; j < jobbList.length; j++) {
-      $(jobbList[j]).click(function() {
-        $(jobbDescriptionList[j]).toggle(200);
-        $(jobbList[j]).toggleClass("jobbOpen");
-        
-        console.log("bread " + j);
+      $(jobbList[j]).find('h4').click(function() {
+        $(jobbList[j]).find('.jobb-content').slideToggle(250)
+        $(jobbList[j]).find('h4').toggleClass('jobbsListOpen')
+        console.log("jobb " + j);
     });
   }
 }

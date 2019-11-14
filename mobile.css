@@ -1,4 +1,19 @@
- /*__________*/
+
+.logo {
+  position: absolute;
+  width: 100%;
+  
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  border: 0rem solid var(--primary);
+  margin: auto;
+  
+  transform: rotate(0deg) translateY(0%);
+  transform-origin:center;
+}
+
+/*__________*/
 /*---MAIN---*/
 /*__________*/
 
@@ -23,24 +38,10 @@
   justify-content: space-between;
   align-items: center;
 }
-
 .thumbnail{
   margin: 4rem;
 }
 
-.logo {
-  position: absolute;
-  width: 100%;
-  
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  border: 0rem solid var(--primary);
-  margin: auto;
-  
-  transform: rotate(0deg) translateY(0%);
-  transform-origin:center;
-}
 h1:first-child {
   margin-top: 1rem;
   
@@ -50,13 +51,10 @@ h1::after {
   content: " - ";
 }
 
-.gall {
-}
-
-.gallery-wrapper {
+.who-wrapper {
   flex-direction: column;
 }
-.gallery-wrapper > * {
+.who-wrapper > * {
   margin: 2.5rem 0;
 }
 .right-title,
