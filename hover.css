@@ -5,3 +5,8 @@
 .thumbnail-active:hover{
     border: .1rem solid var(--primary);
 }
+
+.gallery-thumbnail:hover {
+    background: var(--primary);
+    border: 1rem double var(--secondary);
+  }

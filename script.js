@@ -2,11 +2,7 @@ $(document).ready(function() {
   main();
 });
 
-let artIndex,
-  articleList,
-  contentList,
-  jobbList,
-  jobbDescriptionList;
+let artIndex, articleList, contentList, jobbList, jobbDescriptionList, gridItems;
 
 function main() {
   //   randomizeColor();
@@ -14,15 +10,15 @@ function main() {
   mouseEvents();
   keyEvent();
 }
-$("content").css("height", "200vh");
 
 function globalVariables() {
   articleList = $("article").find(".thumbnail");
   contentList = $("article").find(".content");
   jobbList = $(document).find(".jobb");
+  gridItems = $('.gallery-base').find('.gallery-item')
 
-  console.log(jobbList)
-  
+
+  console.log(gridItems)
 }
 
 function mouseEvents() {
@@ -38,12 +34,32 @@ function mouseEvents() {
   }
 
   for (let j = 0; j < jobbList.length; j++) {
-      $(jobbList[j]).find('h4').click(function() {
-        $(jobbList[j]).find('.jobb-content').slideToggle(250)
-        $(jobbList[j]).find('h4').toggleClass('jobbsListOpen')
+    $(jobbList[j])
+      .find("h4")
+      .click(function() {
+        $(jobbList[j])
+          .find(".jobb-content")
+          .slideToggle(250);
+        $(jobbList[j])
+          .find("h4")
+          .toggleClass("jobbsListOpen");
         console.log("jobb " + j);
-    });
+      });
   }
+
+  $('.gallery-thumbnail').mouseover(function() {
+    $('.gallery-logo').addClass('logo-opacity')
+    $('.gallery-logo').css('top', '70%')
+  }).mouseout( function() {
+    $('.gallery-logo').removeClass('logo-opacity')
+    $('.gallery-logo').css('top', '75%')
+  })
+  
+  $('.gallery-thumbnail').click(function() {
+    $('.gallery-absolute').toggleClass('gallery-thumbnail-clicked')
+    $('.gallery-thumbnail').toggleClass('gallery-thumbnail-styled')
+    $('.gallery-base').fadeToggle(250)
+  }) 
 }
 
 function keyEvent() {
@@ -60,6 +76,9 @@ function randomizeColor() {
     accentArr = ["#ffffff", "#333333", "#4D73B3", "#4DB38B"];
   colorIndex = Math.floor(Math.random() * primeArr.length);
   document.documentElement.style.setProperty("--primary", primeArr[colorIndex]);
-  document.documentElement.style.setProperty( "--secondary",secondArr[colorIndex]);
+  document.documentElement.style.setProperty(
+    "--secondary",
+    secondArr[colorIndex]
+  );
   document.documentElement.style.setProperty("--accent", accentArr[colorIndex]);
 }
