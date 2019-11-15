@@ -2,7 +2,12 @@ $(document).ready(function() {
   main();
 });
 
-let artIndex, articleList, contentList, jobbList, jobbDescriptionList, gridItems;
+let artIndex,
+  articleList,
+  contentList,
+  jobbList,
+  jobbDescriptionList,
+  gridItems;
 
 function main() {
   //   randomizeColor();
@@ -15,10 +20,9 @@ function globalVariables() {
   articleList = $("article").find(".thumbnail");
   contentList = $("article").find(".content");
   jobbList = $(document).find(".jobb");
-  gridItems = $('.gallery-base').find('.gallery-item')
+  gridItems = $(".gallery-base").find(".gallery-item");
 
-
-  console.log(gridItems)
+  console.log(gridItems);
 }
 
 function mouseEvents() {
@@ -40,26 +44,36 @@ function mouseEvents() {
         $(jobbList[j])
           .find(".jobb-content")
           .slideToggle(250);
-        $(jobbList[j])
-          .find("h4")
-          .toggleClass("jobbsListOpen");
         console.log("jobb " + j);
       });
   }
 
-  $('.gallery-thumbnail').mouseover(function() {
-    $('.gallery-logo').addClass('logo-opacity')
-    $('.gallery-logo').css('top', '70%')
-  }).mouseout( function() {
-    $('.gallery-logo').removeClass('logo-opacity')
-    $('.gallery-logo').css('top', '75%')
-  })
-  
-  $('.gallery-thumbnail').click(function() {
-    $('.gallery-absolute').toggleClass('gallery-thumbnail-clicked')
-    $('.gallery-thumbnail').toggleClass('gallery-thumbnail-styled')
-    $('.gallery-base').fadeToggle(250)
-  }) 
+  for (let x = 0; x < gridItems.length; x++) {
+    $(gridItems[x]).click(function() {
+      console.log('grid item ' + x);
+    });
+  }
+
+  $(".gallery-absolute")
+    .mouseover(function() {
+      $(".gallery-logo").addClass("logo-opacity");
+      $(".gallery-logo").css("top", "70%");
+    })
+    .mouseout(function() {
+      $(".gallery-logo").removeClass("logo-opacity");
+      $(".gallery-logo").css("top", "75%");
+    });
+
+  $(".gallery-thumbnail").click(function() {
+    $(".gallery-absolute").toggleClass("gallery-thumbnail-clicked");
+    $(".gallery-logo").toggle();
+    $(".gallery-base").fadeToggle(250);
+  });
+
+  $('.education h2').click(function() {
+    $('.education > *:not(h2)').slideToggle()
+    })
+
 }
 
 function keyEvent() {
