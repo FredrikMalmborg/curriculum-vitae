@@ -1,4 +1,4 @@
-.experience > * h2 {
+.experience > * h2:not(.content-header) {
   background: var(--primary);
   color: var(--secondary);
 
@@ -12,8 +12,6 @@
 }
 
 .content-top {
-  background: #4b65;
-
   width: 60%;
   margin: 10vh 0 0 auto;
   padding: 2rem;
@@ -22,8 +20,6 @@
   flex-direction: column;
 }
 .content-header {
-  background: #4b65;
-
   padding: 1.5rem 0;
   border-bottom: 0.25rem solid var(--primary);
 
@@ -32,15 +28,12 @@
   text-align: right;
 }
 .content-desc {
-  background: #4b65;
-
   text-align: right;
   border-right: 0.25rem solid var(--primary);
   padding: 1rem 1rem;
 }
 
 .content-main {
-  /* background: #f555; */
 
   width: 100%;
 
@@ -56,7 +49,7 @@
   border-bottom: 1rem double var(--primary);
 }
 .education > *:not(h2) {
-  display: none;
+  /* display: none; */
 
   padding: 2rem;
 }
@@ -67,11 +60,14 @@
 }
 .collage span {
   margin: 1rem 0;
-  font-size: 2rem;
+
+  font-size: 1.2rem;
   color: var(--primary);
+  border-bottom: 1px solid var(--primary);
 }
 .collage h3 {
   margin: 1rem 0;
+  font-size: 1.5rem;
 
   border-bottom: 0.2rem solid var(--primary);
 }
@@ -87,23 +83,20 @@
 
 /* JOBBS */
 .jobbs {
-  /* background: #0ff2; */
-
   margin-top: 10vh;
   list-style: none;
-  max-width: 80rem;
 }
 
 .jobb {
-  /* background: #0ff2; */
-
   margin: 1rem;
+  margin-left: auto;
+  max-width: 80rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 .jobb > *:not(h4) {
-  /* display: none; */
+  display: none;
 }
 .jobb h4 {
   cursor: pointer;
@@ -132,7 +125,7 @@
     border-radius: 1rem;
     border-top-right-radius: 0;
 
-  margin: 0 20% 0 0;
+  margin: 0 20% 0 5%;
   padding: 1rem;
 
   background: var(--primary);
