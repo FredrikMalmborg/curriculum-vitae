@@ -1,19 +1,3 @@
-/* .thumbnail-me {
-  background: url("./res/bigHAHA.jpg");
-  background-size: 100%;
-}
-.thumbnail .filter {
-  width: 100%;
-  height: 100%;
-  border: 1px solid white;
-  backdrop-filter: grayscale(100%);
-} */
-
-.me > * {
-  /* background: #f234; */
-  border: 1px solid white;
-}
-
 .me {
   /* padding: 1rem; */
 }
@@ -81,7 +65,7 @@
   border-right: 2rem solid var(--primary);
   border-bottom: 0.2rem solid var(--primary);
 
-  margin: .2rem 0;
+  margin: 0.2rem 0;
   padding: 0.5rem;
 }
 .interests h3 {
@@ -89,10 +73,9 @@
   color: var(--secondary);
 
   font-size: 2rem;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   margin-bottom: 1rem;
 }
-
 
 /*-- programs i know*/
 
@@ -100,37 +83,53 @@
   font-size: 2.5rem;
   padding: 1rem;
   margin: 5rem 0;
-  
+
   background: var(--primary);
   color: var(--accent);
 }
+.me-main h3 {
+  font-size: 2rem;
+  margin: 2rem;
+  padding: .5rem;
+  border-bottom: .2rem solid var(--primary);
+}
 
-.progList {
+
+.prog-list {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
 }
-.prog > *{
-  /* background: #46f3; */
-  /* height: 100%; */
+.prog > * {
 }
 .prog {
-  height: 10vw;
+  border: 0.1rem solid var(--primary);
+
+  /* background: #f345; */
+  max-width: 80rem;
   display: flex;
+  justify-content: center;
 
   margin: 1rem;
-
 }
-.prog-logo {
-  height: 100%;
-  width: 10vw;
-  
-  border:1px solid #fff;
-  margin: 0 1rem;
+.prog-logo{
+  min-width: 5rem;
+  width: 8vw;
+  /* border:1px solid #fff; */
+}
+.prog-logo::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 
 .bar-holder {
+  /* border: .1rem solid var(--primary); */
   border-left: 1rem solid var(--primary);
-  width: 80vw;
+
+  width: 70vw;
+  margin: 0.5rem;
 
   display: flex;
   align-items: center;
@@ -138,11 +137,48 @@
 
 .bar {
   background: var(--primary);
-  margin: .5rem;
+  /* background: linear-gradient(to left, var(--primary), var(--secondary)); */
+  margin: 0.5rem;
 }
 .bar p {
   text-align: right;
-  padding: .5rem 1rem;
+  font-size: 1rem;
+  padding: 0.2rem;
+}
+
+/* languages */
+
+.lang-list {
+  margin-bottom: 20rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 1px solid #fff;
+}
+.lang {
+  margin: 1rem;
+  display: flex;
+  
+  justify-content: center;
+  border: 1px solid #fff;
+}
+
+.lang h4 {
+  border: .5rem solid var(--primary);
+
+  width: 10vw;
+  min-width: 10rem;
+  padding: .5rem;
+
+  text-align: center;
+}
+.progress {
+  width: 60vw;
+  
+  display: flex;
+  align-items: center;
 }
 
 /* bar percent*/
@@ -182,6 +218,7 @@
 
 .ps {
   background: url(./res/Ps.svg);
+  background-size: cover;
 }
 .il {
   background: url(./res/Il.svg);

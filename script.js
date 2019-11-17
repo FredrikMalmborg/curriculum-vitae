@@ -11,7 +11,7 @@ let artIndex,
   progList;
 
 function main() {
-  //   randomizeColor();
+    randomizeColor();
   globalVariables();
   mouseEvents();
   keyEvent();
