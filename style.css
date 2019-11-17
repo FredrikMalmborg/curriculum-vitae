@@ -11,33 +11,8 @@
 */
 
 :root {
-  --primary: #e1ad01;
-  --secondary: #333;
-  --accent: #fff;
-
-  /* --primary: #ff5252;
-  --secondary: #ffc;
-  --accent: #333; */
-
-  /* --primary: #4E7DCC;
-  --secondary: #FF8C7A;
-  --accent: #4D73B3; */
-
-  /* --primary: #4ECC9A;
-  --secondary: #FFDF94;
-  --accent: #4DB38B; */
-
   --standard: 15vw;
 }
-
-@media (light-level: dim) {
-  :root {
-    --primary: #fff;
-    --secondary: #000;
-    --accent: #f55;
-  }
-}
-
 *,
 *::before,
 *::after {
@@ -160,6 +135,24 @@ hr {
 
   overflow: hidden;
 }
+
+.thumbnail-logo {
+  position: absolute;
+  top: 0vh;
+  
+  width: 100%;
+  
+  text-align: center;
+  opacity: 0;
+
+  transition: .25s ease;
+}
+
+.thumbnail-logo-styled {
+  top: -5vh;
+  opacity: 1;
+}
+
 .thumbnail img {
   width: 130%;
   display: none;
@@ -183,7 +176,6 @@ hr {
   position: absolute;
   left: 0;
   top: 0;
-  /* bottom: 0; */
 
   min-width: 100%;
 
@@ -192,21 +184,3 @@ hr {
   background: var(--secondary);
   z-index: 110;
 }
-
-
-
-/*--- footer ---*/
-
-/* footer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background: #3338;
-  padding: 0.5rem;
-}
-
-footer div {
-  width: 90%;
-  height: 5rem;
-  background: #3338;
-} */

@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 
 /**
- * 
+ * Themes
  */
 const themes = {
   primary: ["#e1ad01", "#ff5252", "#4E7DCC"],
@@ -19,6 +19,10 @@ let artIndex,
   gridItems,
   progList;
 
+/**
+ * Execute all functions
+ */
+
 function main() {
   randomizeColor();
   globalVariables();
@@ -26,6 +30,9 @@ function main() {
   keyEvent();
 }
 
+/**
+ * Establish all global veriables
+ */
 function globalVariables() {
   articleList = $("article").find(".thumbnail");
   contentList = $("article").find(".content");
@@ -35,29 +42,32 @@ function globalVariables() {
     (progPercent = $(".bar").find("p"));
 }
 
+/**
+ * all functions accessed through mouse interaction
+ */
 function mouseEvents() {
   for (let i = 0; i < articleList.length; i++) {
     $(articleList[i]).click(function() {
+      $(articleList[i]).toggleClass("thumbnail-active");
       $(contentList[i]).fadeToggle(250);
       $(contentList[i]).css("min-height", $(document).height() + "px");
-      $(articleList[i]).toggleClass("thumbnail-active");
-      // $('.thumbnail img').fadeToggle(250)
 
       $("hori-hr").hide();
 
       console.log("Article Index is: " + i);
-
-      if (i === 0) {
-        console.log("experience");
-      }
-      if (i === 1) {
-        $(articleList[i]).toggleClass("thumbnail-me");
-        console.log("me");
-      }
-      if (i === 2) {
-        console.log("contact");
-      }
     });
+    $(articleList[i])
+      .mouseover(function() {
+        console.log("in " + i);
+
+        // $(articleList[i]).find('.thumbnail-logo').addClass('thumbnail-logo-styled')
+        $('.thumbnail-logo').addClass('thumbnail-logo-styled')
+      })
+      .mouseout(function() {
+        console.log("out " + i);
+        // $(articleList[i]).find('.thumbnail-logo').removeClass('thumbnail-logo-styled')
+        $('.thumbnail-logo').removeClass('thumbnail-logo-styled')
+      });
   }
 
   for (let j = 0; j < jobbList.length; j++) {
@@ -74,17 +84,17 @@ function mouseEvents() {
     $(gridItems[x]).click(function() {
       targetBackground = $(gridItems[x]).css("background-image");
       $(".showcase").css("background-image", `${targetBackground}`);
-      $(".grid-module").show();
+      $(".grid-module").fadeToggle(100);
     });
   }
   $(".grid-module").click(function() {
-    $(".grid-module").hide();
+    $(".grid-module").fadeToggle(100);
   });
 
   $(".gallery-absolute")
     .mouseover(function() {
       $(".gallery-logo").addClass("logo-opacity");
-      $(".gallery-logo").css("top", "70%");
+      $(".gallery-logo").css("top", "60%");
     })
     .mouseout(function() {
       $(".gallery-logo").removeClass("logo-opacity");
@@ -103,6 +113,9 @@ function mouseEvents() {
   });
 }
 
+/**
+ * all functions accessed through keyboard interaction
+ */
 function keyEvent() {
   $(document).keypress(function(event) {
     if (event.keyCode === 13) {
@@ -110,9 +123,12 @@ function keyEvent() {
     }
   });
 }
-
+/**
+ * randomize the theme of the website
+ */
 function randomizeColor() {
   colorIndex = Math.floor(Math.random() * themes.primary.length);
+
   document.documentElement.style.setProperty(
     "--primary",
     themes.primary[colorIndex]
