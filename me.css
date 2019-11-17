@@ -154,15 +154,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  border: 1px solid #fff;
 }
 .lang {
   margin: 1rem;
   display: flex;
   
   justify-content: center;
-  border: 1px solid #fff;
 }
 
 .lang h4 {
