@@ -2,6 +2,15 @@ $(document).ready(function() {
   main();
 });
 
+/**
+ * 
+ */
+const themes = {
+  primary: ["#e1ad01", "#ff5252", "#4E7DCC"],
+  secondary: ["#333333", "#ffffcc", "#FF8C7A"],
+  accent: ["#ffffff", "#333333", "#423F4C"]
+};
+
 let artIndex,
   articleList,
   contentList,
@@ -15,8 +24,6 @@ function main() {
   globalVariables();
   mouseEvents();
   keyEvent();
-
-  progListStatusBars();
 }
 
 function globalVariables() {
@@ -68,8 +75,6 @@ function mouseEvents() {
       targetBackground = $(gridItems[x]).css("background-image");
       $(".showcase").css("background-image", `${targetBackground}`);
       $(".grid-module").show();
-
-      console.log(targetBackground)
     });
   }
   $(".grid-module").click(function() {
@@ -88,6 +93,7 @@ function mouseEvents() {
 
   $(".gallery-thumbnail").click(function() {
     $(".gallery-absolute").toggleClass("gallery-thumbnail-clicked");
+    $(".gallery-thumbnail").toggleClass("gallery-thumbnail-styled");
     $(".gallery-logo").toggle();
     $(".gallery-base").fadeToggle(250);
   });
@@ -106,22 +112,17 @@ function keyEvent() {
 }
 
 function randomizeColor() {
-  let primeArr = ["#e1ad01", "#ff5252", "#4E7DCC", "#4ECC9A"],
-    secondArr = ["#333333", "#ffffcc", "#FF8C7A", "#FFDF94"],
-    accentArr = ["#ffffff", "#333333", "#423F4C", "#4DB38B"];
-  colorIndex = Math.floor(Math.random() * primeArr.length);
-  document.documentElement.style.setProperty("--primary", primeArr[colorIndex]);
+  colorIndex = Math.floor(Math.random() * themes.primary.length);
+  document.documentElement.style.setProperty(
+    "--primary",
+    themes.primary[colorIndex]
+  );
   document.documentElement.style.setProperty(
     "--secondary",
-    secondArr[colorIndex]
+    themes.secondary[colorIndex]
   );
-  document.documentElement.style.setProperty("--accent", accentArr[colorIndex]);
-}
-
-function progListStatusBars() {
-  for (let i = 0; i < progList.length; i++) {
-    console.log("on");
-
-    // progList[i].css('width', `$(current)`)
-  }
+  document.documentElement.style.setProperty(
+    "--accent",
+    themes.accent[colorIndex]
+  );
 }
