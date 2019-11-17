@@ -1,0 +1,55 @@
+.contact {
+    height: 100vh;
+}
+
+.contact-top {
+    
+    height: 50vh;
+    width: 60%;
+    font-size: 4rem;
+    color: var(--primary);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-main {
+
+    display: flex;
+    justify-content: center;
+}
+form {
+    background: var(--primary);
+    width: 60vw;
+    max-width: 80rem;
+
+    display: flex;
+    flex-direction: column;
+
+}
+form >  * {
+    margin: .5rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    background: var(--secondary);
+    border: .5rem double var(--primary);
+    color: var(--accent);
+
+    padding: .5rem;
+}
+input[type="submit"] {
+    width: 20%;
+
+    font-family: "Audiowide", Arial, Helvetica, sans-serif;
+
+
+}
+
+textarea {
+    resize: none;
+}

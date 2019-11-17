@@ -11,7 +11,7 @@ let artIndex,
   progList;
 
 function main() {
-    randomizeColor();
+  randomizeColor();
   globalVariables();
   mouseEvents();
   keyEvent();
@@ -24,8 +24,8 @@ function globalVariables() {
   contentList = $("article").find(".content");
   jobbList = $(document).find(".jobb");
   gridItems = $(".gallery-base").find(".gallery-item");
-  progList = $(".bar-holder").find(".bar"),
-  progPercent = $('.bar').find('p');
+  (progList = $(".bar-holder").find(".bar")),
+    (progPercent = $(".bar").find("p"));
 }
 
 function mouseEvents() {
@@ -60,15 +60,21 @@ function mouseEvents() {
         $(jobbList[j])
           .find(".jobb-content")
           .slideToggle(250);
-        console.log("jobb " + j);
       });
   }
 
   for (let x = 0; x < gridItems.length; x++) {
     $(gridItems[x]).click(function() {
-      console.log("grid item " + x);
+      targetBackground = $(gridItems[x]).css("background-image");
+      $(".showcase").css("background-image", `${targetBackground}`);
+      $(".grid-module").show();
+
+      console.log(targetBackground)
     });
   }
+  $(".grid-module").click(function() {
+    $(".grid-module").hide();
+  });
 
   $(".gallery-absolute")
     .mouseover(function() {
@@ -114,10 +120,8 @@ function randomizeColor() {
 
 function progListStatusBars() {
   for (let i = 0; i < progList.length; i++) {
-
-      // progList[i].css('width', `$(current)`)
-
     console.log("on");
-    console.log(current.val);
+
+    // progList[i].css('width', `$(current)`)
   }
 }
