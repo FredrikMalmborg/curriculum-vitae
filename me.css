@@ -1,0 +1,197 @@
+/* .thumbnail-me {
+  background: url("./res/bigHAHA.jpg");
+  background-size: 100%;
+}
+.thumbnail .filter {
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  backdrop-filter: grayscale(100%);
+} */
+
+.me > * {
+  /* background: #f234; */
+  border: 1px solid white;
+}
+
+.me {
+  /* padding: 1rem; */
+}
+.me-top > * {
+  /* width: 50%; */
+}
+
+.me-top {
+  height: 50vh;
+  max-width: 80rem;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.me-top a {
+  color: var(--accent);
+}
+.me-header {
+  height: 50%;
+  width: auto;
+
+  color: var(--primary);
+  font-size: 5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.me-header h2 {
+  width: 100%;
+  padding: 3rem;
+  border-bottom: 0.2rem solid var(--primary);
+}
+.me-desc {
+  height: 50%;
+  padding: 0 18vw 0 3vw;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.me-desc > * {
+  border-left: 0.5rem solid var(--primary);
+  border-bottom: 0.2rem solid var(--primary);
+
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.interests {
+  height: 100%;
+  padding: 10vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+
+  /* text-align: right; */
+}
+.interests > *:not(h3) {
+  border-right: 2rem solid var(--primary);
+  border-bottom: 0.2rem solid var(--primary);
+
+  margin: .2rem 0;
+  padding: 0.5rem;
+}
+.interests h3 {
+  background: var(--primary);
+  color: var(--secondary);
+
+  font-size: 2rem;
+  padding: .5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+
+/*-- programs i know*/
+
+.me-main h2 {
+  font-size: 2.5rem;
+  padding: 1rem;
+  margin: 5rem 0;
+  
+  background: var(--primary);
+  color: var(--accent);
+}
+
+.progList {
+  display: flex;
+  flex-direction: column;
+}
+.prog > *{
+  /* background: #46f3; */
+  /* height: 100%; */
+}
+.prog {
+  height: 10vw;
+  display: flex;
+
+  margin: 1rem;
+
+}
+.prog-logo {
+  height: 100%;
+  width: 10vw;
+  
+  border:1px solid #fff;
+  margin: 0 1rem;
+}
+
+.bar-holder {
+  border-left: 1rem solid var(--primary);
+  width: 80vw;
+
+  display: flex;
+  align-items: center;
+}
+
+.bar {
+  background: var(--primary);
+  margin: .5rem;
+}
+.bar p {
+  text-align: right;
+  padding: .5rem 1rem;
+}
+
+/* bar percent*/
+
+.percent-10 {
+  width: 10%;
+}
+.percent-20 {
+  width: 20%;
+}
+.percent-30 {
+  width: 30%;
+}
+.percent-40 {
+  width: 40%;
+}
+.percent-50 {
+  width: 50%;
+}
+.percent-60 {
+  width: 60%;
+}
+.percent-70 {
+  width: 70%;
+}
+.percent-80 {
+  width: 80%;
+}
+.percent-90 {
+  width: 90%;
+}
+.percent-100 {
+  width: 100%;
+}
+
+/* program logos*/
+
+.ps {
+  background: url(./res/Ps.svg);
+}
+.il {
+  background: url(./res/Il.svg);
+}
+.id {
+  background: url(./res/Id.svg);
+}
+.ae {
+  background: url(./res/Ae.svg);
+}
+.pr {
+  background: url(./res/Pr.svg);
+}

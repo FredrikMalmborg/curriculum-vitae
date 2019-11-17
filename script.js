@@ -7,13 +7,16 @@ let artIndex,
   contentList,
   jobbList,
   jobbDescriptionList,
-  gridItems;
+  gridItems,
+  progList;
 
 function main() {
   //   randomizeColor();
   globalVariables();
   mouseEvents();
   keyEvent();
+
+  progListStatusBars();
 }
 
 function globalVariables() {
@@ -21,19 +24,32 @@ function globalVariables() {
   contentList = $("article").find(".content");
   jobbList = $(document).find(".jobb");
   gridItems = $(".gallery-base").find(".gallery-item");
-
-  console.log(gridItems);
+  progList = $(".bar-holder").find(".bar"),
+  progPercent = $('.bar').find('p');
 }
 
 function mouseEvents() {
   for (let i = 0; i < articleList.length; i++) {
     $(articleList[i]).click(function() {
       $(contentList[i]).fadeToggle(250);
-      $(contentList[i]).css("min-height", $("body").height() + "px");
+      $(contentList[i]).css("min-height", $(document).height() + "px");
       $(articleList[i]).toggleClass("thumbnail-active");
+      // $('.thumbnail img').fadeToggle(250)
+
       $("hori-hr").hide();
-      artIndex = i;
-      console.log("Article Index is: " + artIndex);
+
+      console.log("Article Index is: " + i);
+
+      if (i === 0) {
+        console.log("experience");
+      }
+      if (i === 1) {
+        $(articleList[i]).toggleClass("thumbnail-me");
+        console.log("me");
+      }
+      if (i === 2) {
+        console.log("contact");
+      }
     });
   }
 
@@ -50,7 +66,7 @@ function mouseEvents() {
 
   for (let x = 0; x < gridItems.length; x++) {
     $(gridItems[x]).click(function() {
-      console.log('grid item ' + x);
+      console.log("grid item " + x);
     });
   }
 
@@ -70,10 +86,9 @@ function mouseEvents() {
     $(".gallery-base").fadeToggle(250);
   });
 
-  $('.education h2').click(function() {
-    $('.education > *:not(h2)').slideToggle()
-    })
-
+  $(".education h2").click(function() {
+    $(".education > *:not(h2)").slideToggle();
+  });
 }
 
 function keyEvent() {
@@ -87,7 +102,7 @@ function keyEvent() {
 function randomizeColor() {
   let primeArr = ["#e1ad01", "#ff5252", "#4E7DCC", "#4ECC9A"],
     secondArr = ["#333333", "#ffffcc", "#FF8C7A", "#FFDF94"],
-    accentArr = ["#ffffff", "#333333", "#4D73B3", "#4DB38B"];
+    accentArr = ["#ffffff", "#333333", "#423F4C", "#4DB38B"];
   colorIndex = Math.floor(Math.random() * primeArr.length);
   document.documentElement.style.setProperty("--primary", primeArr[colorIndex]);
   document.documentElement.style.setProperty(
@@ -95,4 +110,14 @@ function randomizeColor() {
     secondArr[colorIndex]
   );
   document.documentElement.style.setProperty("--accent", accentArr[colorIndex]);
+}
+
+function progListStatusBars() {
+  for (let i = 0; i < progList.length; i++) {
+
+      // progList[i].css('width', `$(current)`)
+
+    console.log("on");
+    console.log(current.val);
+  }
 }
