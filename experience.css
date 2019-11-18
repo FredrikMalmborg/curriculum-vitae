@@ -87,6 +87,10 @@
   list-style: none;
 }
 
+.jobbsList {
+  margin-right: 5vw;
+}
+
 .jobb {
   margin: 1rem;
   margin-left: auto;
