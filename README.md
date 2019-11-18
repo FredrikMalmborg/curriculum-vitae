@@ -13,5 +13,5 @@ En detalj jag tycker mycket om som jag mer gjorde för migsjälv än någon anna
 att varje gång man laddar in på sidan så borde man mötas med ett nytt färgtema. 
 men om man inte är nöjd kan man trycka 'enter' för att få ett nytt.
 
-[PAGES](https://fredrikmalmborg.github.io/curriculum-vitae/)
-[REPO] (https://github.com/FredrikMalmborg/curriculum-vitae)
+###[PAGES](https://fredrikmalmborg.github.io/curriculum-vitae/)
+###[REPO](https://github.com/FredrikMalmborg/curriculum-vitae)
