@@ -1,25 +1,22 @@
 .me {
-  /* padding: 1rem; */
 }
 .me-top > * {
-  /* width: 50%; */
 }
 
 .me-top {
-  height: 50vh;
   max-width: 80rem;
   margin: auto;
 
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-areas:
+    "header interests"
+    "desc interests";
 }
 .me-top a {
   color: var(--accent);
 }
 .me-header {
-  height: 50%;
-  width: auto;
+  grid-area: header;
 
   color: var(--primary);
   font-size: 5rem;
@@ -29,15 +26,13 @@
   justify-content: center;
 }
 .me-header h2 {
-  width: 100%;
   padding: 3rem;
   border-bottom: 0.2rem solid var(--primary);
 }
 .me-desc {
-  height: 50%;
-  padding: 0 18vw 0 3vw;
-  text-align: center;
+  grid-area: desc;
 
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,9 +45,22 @@
   padding: 0.5rem;
 }
 
+.myLinks {
+  border: none;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-evenly;
+}
+.myLinks a img{
+  margin: .5rem;
+  width: var(--standard);
+  height: var(--standard);
+}
+
 .interests {
-  height: 100%;
-  padding: 10vw;
+  grid-area: interests;
+
 
   display: flex;
   flex-direction: column;
@@ -90,10 +98,9 @@
 .me-main h3 {
   font-size: 2rem;
   margin: 2rem;
-  padding: .5rem;
-  border-bottom: .2rem solid var(--primary);
+  padding: 0.5rem;
+  border-bottom: 0.2rem solid var(--primary);
 }
-
 
 .prog-list {
   display: flex;
@@ -113,7 +120,7 @@
 
   margin: 1rem;
 }
-.prog-logo{
+.prog-logo {
   min-width: 5rem;
   width: 8vw;
   /* border:1px solid #fff; */
@@ -137,7 +144,6 @@
 
 .bar {
   background: var(--primary);
-  /* background: linear-gradient(to left, var(--primary), var(--secondary)); */
   margin: 0.5rem;
 }
 .bar p {
@@ -158,22 +164,22 @@
 .lang {
   margin: 1rem;
   display: flex;
-  
+
   justify-content: center;
 }
 
 .lang h4 {
-  border: .5rem solid var(--primary);
+  border: 0.5rem solid var(--primary);
 
   width: 10vw;
   min-width: 10rem;
-  padding: .5rem;
+  padding: 0.5rem;
 
   text-align: center;
 }
 .progress {
   width: 60vw;
-  
+
   display: flex;
   align-items: center;
 }

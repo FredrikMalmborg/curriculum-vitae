@@ -1,55 +1,61 @@
 .contact {
-    height: 100vh;
+  height: 100vh;
+
+  display: grid;
+  justify-items: center;
+  align-content: center;
+
+  grid-template-rows: 15vh auto;
+  grid-template-areas:
+    "header ."
+    "contact contact";
 }
 
 .contact-top {
-    
-    height: 50vh;
-    width: 60%;
-    font-size: 4rem;
-    color: var(--primary);
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  grid-area: header;
+
+  font-size: 4rem;
+  color: var(--primary);
+}
+.contact-top h2 {
+
 }
 
 .contact-main {
+  grid-area: contact;
 
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 form {
-    background: var(--primary);
-    width: 60vw;
-    max-width: 80rem;
+  background: var(--primary);
+  width: 60vw;
+  max-width: 80rem;
 
-    display: flex;
-    flex-direction: column;
-
+  display: flex;
+  flex-direction: column;
 }
-form >  * {
-    margin: .5rem;
+form > * {
+  margin: 0.5rem;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-input, textarea {
-    background: var(--secondary);
-    border: .5rem double var(--primary);
-    color: var(--accent);
+input,
+textarea {
+  background: var(--secondary);
+  border: 0.5rem double var(--primary);
+  color: var(--accent);
 
-    padding: .5rem;
+  padding: 0.5rem;
 }
 input[type="submit"] {
-    width: 20%;
+  width: 30%;
 
-    font-family: "Audiowide", Arial, Helvetica, sans-serif;
-
-
+  font-family: "Audiowide", Arial, Helvetica, sans-serif;
 }
 
 textarea {
-    resize: none;
+  resize: none;
 }

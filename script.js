@@ -6,10 +6,12 @@ $(document).ready(function() {
  * Themes
  */
 const themes = {
-  primary: ["#e1ad01", "#ff5252", "#4E7DCC"],
-  secondary: ["#333333", "#ffffcc", "#FF8C7A"],
-  accent: ["#ffffff", "#333333", "#423F4C"]
-};
+  primary:    ["#e1ad01", "#ff5252", "#4E7DCC", "#ABFFE6", "#FFE9B9", "#CC74A7"],
+  secondary:  ["#333333", "#ffffcc", "#423F4C","#54B396", "#5F7CB3", "#99296A"],
+  accent:     ["#ffffff", "#333333", "#FF8C7A", "#333", "#D1E1FF", "#bbb"]
+};            //Orange    soft-red
+              //D-gray    Br-yellow
+              //White     D-grey
 
 let artIndex,
   articleList,
@@ -26,7 +28,8 @@ let artIndex,
 function main() {
   randomizeColor();
   globalVariables();
-  mouseEvents();
+  mouseClickEvents();
+  mouseHoverEvents();
   keyEvent();
 }
 
@@ -45,61 +48,13 @@ function globalVariables() {
 /**
  * all functions accessed through mouse interaction
  */
-function mouseEvents() {
-  for (let i = 0; i < articleList.length; i++) {
-    $(articleList[i]).click(function() {
-      $(articleList[i]).toggleClass("thumbnail-active");
-      $(contentList[i]).fadeToggle(250);
-      $(contentList[i]).css("min-height", $(document).height() + "px");
+function mouseClickEvents() {
+  openArticle();
 
-      $("hori-hr").hide();
+  openJobb();
 
-      console.log("Article Index is: " + i);
-    });
-    $(articleList[i])
-      .mouseover(function() {
-        console.log("in " + i);
+  openGridItem();
 
-        // $(articleList[i]).find('.thumbnail-logo').addClass('thumbnail-logo-styled')
-        $('.thumbnail-logo').addClass('thumbnail-logo-styled')
-      })
-      .mouseout(function() {
-        console.log("out " + i);
-        // $(articleList[i]).find('.thumbnail-logo').removeClass('thumbnail-logo-styled')
-        $('.thumbnail-logo').removeClass('thumbnail-logo-styled')
-      });
-  }
-
-  for (let j = 0; j < jobbList.length; j++) {
-    $(jobbList[j])
-      .find("h4")
-      .click(function() {
-        $(jobbList[j])
-          .find(".jobb-content")
-          .slideToggle(250);
-      });
-  }
-
-  for (let x = 0; x < gridItems.length; x++) {
-    $(gridItems[x]).click(function() {
-      targetBackground = $(gridItems[x]).css("background-image");
-      $(".showcase").css("background-image", `${targetBackground}`);
-      $(".grid-module").fadeToggle(100);
-    });
-  }
-  $(".grid-module").click(function() {
-    $(".grid-module").fadeToggle(100);
-  });
-
-  $(".gallery-absolute")
-    .mouseover(function() {
-      $(".gallery-logo").addClass("logo-opacity");
-      $(".gallery-logo").css("top", "60%");
-    })
-    .mouseout(function() {
-      $(".gallery-logo").removeClass("logo-opacity");
-      $(".gallery-logo").css("top", "75%");
-    });
 
   $(".gallery-thumbnail").click(function() {
     $(".gallery-absolute").toggleClass("gallery-thumbnail-clicked");
@@ -107,9 +62,16 @@ function mouseEvents() {
     $(".gallery-logo").toggle();
     $(".gallery-base").fadeToggle(250);
   });
-
-  $(".education h2").click(function() {
-    $(".education > *:not(h2)").slideToggle();
+}
+function mouseHoverEvents() {
+  $(".gallery-absolute")
+  .mouseover(function() {
+    $(".gallery-logo").addClass("logo-opacity");
+    $(".gallery-logo").css("top", "60%");
+  })
+  .mouseout(function() {
+    $(".gallery-logo").removeClass("logo-opacity");
+    $(".gallery-logo").css("top", "75%");
   });
 }
 
@@ -141,4 +103,55 @@ function randomizeColor() {
     "--accent",
     themes.accent[colorIndex]
   );
+}
+
+function openArticle() {
+  for (let i = 0; i < articleList.length; i++) {
+    $(articleList[i]).click(function() {
+      $(articleList[i]).toggleClass("thumbnail-active");
+      $(contentList[i]).fadeToggle(250);
+      $(contentList[i]).css("min-height", $(document).height() + "px");
+
+      $("hori-hr").hide();
+
+      console.log("Article Index is: " + i);
+    });
+    $(articleList[i])
+      .mouseover(function() {
+        console.log("in " + i);
+
+        // $(articleList[i]).find('.thumbnail-logo').addClass('thumbnail-logo-styled')
+        $(".thumbnail-logo").addClass("thumbnail-logo-styled");
+      })
+      .mouseout(function() {
+        console.log("out " + i);
+        // $(articleList[i]).find('.thumbnail-logo').removeClass('thumbnail-logo-styled')
+        $(".thumbnail-logo").removeClass("thumbnail-logo-styled");
+      });
+  }
+}
+
+function openJobb() {
+  for (let j = 0; j < jobbList.length; j++) {
+    $(jobbList[j])
+      .find("h4")
+      .click(function() {
+        $(jobbList[j])
+          .find(".jobb-content")
+          .slideToggle(250);
+      });
+  }
+}
+
+function openGridItem() {
+  for (let x = 0; x < gridItems.length; x++) {
+    $(gridItems[x]).click(function() {
+      targetBackground = $(gridItems[x]).css("background-image");
+      $(".showcase").css("background-image", `${targetBackground}`);
+      $(".grid-module").fadeToggle(100);
+    });
+  }
+  $(".grid-module").click(function() {
+    $(".grid-module").fadeToggle(100);
+  });
 }

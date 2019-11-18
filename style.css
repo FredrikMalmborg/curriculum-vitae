@@ -32,6 +32,8 @@ body {
   letter-spacing: 0.02rem;
   line-height: 1.3rem;
 
+  overflow-x: hidden;
+
   background: var(--primary);
   color: var(--secondary);
 

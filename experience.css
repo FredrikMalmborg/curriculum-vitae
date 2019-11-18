@@ -1,7 +1,7 @@
 .experience > * h2:not(.content-header) {
   background: var(--primary);
   color: var(--secondary);
-
+  width: 100vw;
   padding: 0.5rem 2rem;
   cursor: pointer;
 }
@@ -75,7 +75,7 @@
   list-style: circle;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, .8fr));
 }
 .collage ul li {
   margin: 0.2rem;
