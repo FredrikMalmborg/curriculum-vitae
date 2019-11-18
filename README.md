@@ -1,8 +1,7 @@
 # curriculum-vitae
+#### av fredrik malmborg
 
-####av fredrik malmborg
-
-##Beskrivning
+## Beskrivning
 I denna uppgift skulle vi göra en webbsida som representerar oss som personer.
 Något i stil med ett portfolio korsat med ett CV tänkte jag och gjorde en webbsida
 som förhoppningsvis representerar mig. Jag har försökt ha ett genomgående visuellt
@@ -13,5 +12,7 @@ En detalj jag tycker mycket om som jag mer gjorde för migsjälv än någon anna
 att varje gång man laddar in på sidan så borde man mötas med ett nytt färgtema. 
 men om man inte är nöjd kan man trycka 'enter' för att få ett nytt.
 
-###[PAGES](https://fredrikmalmborg.github.io/curriculum-vitae/)
-###[REPO](https://github.com/FredrikMalmborg/curriculum-vitae)
+---
+
+### [PAGES](https://fredrikmalmborg.github.io/curriculum-vitae/)
+### [REPO](https://github.com/FredrikMalmborg/curriculum-vitae)
