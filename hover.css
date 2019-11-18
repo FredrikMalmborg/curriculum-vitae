@@ -12,6 +12,6 @@
 }
 
 .gallery-grid > *:hover {
-  border: 1rem double var(--secondary);
+  border: 1rem solid var(--secondary);
 }
 

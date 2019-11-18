@@ -140,6 +140,7 @@ hr {
 
 .thumbnail-logo {
   position: absolute;
+  color: var(--accent);
   top: 0vh;
   
   width: 100%;
@@ -169,7 +170,7 @@ hr {
 
   /* background: var(--primary); */
   box-shadow: inset 0 0 0 .5rem var(--secondary);
-  border: .1rem solid var(--primary);
+  border: .5rem double var(--primary);
 
   transform: rotate(135deg) scale(2);
 }

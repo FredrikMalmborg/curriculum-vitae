@@ -46,7 +46,7 @@ input,
 textarea {
   background: var(--secondary);
   border: 0.5rem double var(--primary);
-  color: var(--accent);
+  color: var(--primary);
 
   padding: 0.5rem;
 }

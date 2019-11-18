@@ -6,13 +6,45 @@ $(document).ready(function() {
  * Themes
  */
 const themes = {
-  primary:    ["#e1ad01", "#ff5252", "#4E7DCC", "#ABFFE6", "#FFE9B9", "#CC74A7"],
-  secondary:  ["#333333", "#ffffcc", "#423F4C","#54B396", "#5F7CB3", "#99296A"],
-  accent:     ["#ffffff", "#333333", "#FF8C7A", "#333", "#D1E1FF", "#bbb"]
-};            //Orange    soft-red
-              //D-gray    Br-yellow
-              //White     D-grey
+  primary: [
+    "#e1ad01", // Orange
+    "#ff5252", // soft red
+    "#4E7DCC", // soft blue
+    "#CC335B", // light crimson
+    "#FFE9B9", // bright beige
+    "#CC74A7", // soft cherry
+    "#294699", // dark blue
+    "#FFF0D9", // nier
+    "#000000"  // hacker 
+  ],
+  secondary: [
+    "#333333", // dark gray
+    "#ffffcc", // bright yellow
+    "#423F4C", // smudged charcoal
+    "#49ACCC", // blueish teal
+    "#5F7CB3", // soft blue
+    "#99296A", // dark lilac
+    "#748ACC", // soft blue
+    "#837B6F", // nier
+    "#00E626"  // more hacker 
+  ],
+  accent: [
+    "#ffffff", // white
+    "#333333", // dark gray
+    "#FF8C7A", // salmon
+    "#333333", // dark gray
+    "#D1E1FF", // light blue
+    "#bbbbbb", // light gray
+    "#E9E0FF", // marble
+    "#423E38", // nier
+    "#008015"  // morer hacker
+  ]
+};
 
+
+/**
+ * declare the existence of all variables
+ */
 let artIndex,
   articleList,
   contentList,
@@ -24,10 +56,9 @@ let artIndex,
 /**
  * Execute all functions
  */
-
 function main() {
-  randomizeColor();
   globalVariables();
+  randomizeColor();
   mouseClickEvents();
   mouseHoverEvents();
   keyEvent();
@@ -41,38 +72,31 @@ function globalVariables() {
   contentList = $("article").find(".content");
   jobbList = $(document).find(".jobb");
   gridItems = $(".gallery-base").find(".gallery-item");
-  (progList = $(".bar-holder").find(".bar")),
-    (progPercent = $(".bar").find("p"));
 }
 
 /**
- * all functions accessed through mouse interaction
+ * all functions accessed through mouse click interaction
  */
 function mouseClickEvents() {
   openArticle();
-
   openJobb();
-
   openGridItem();
-
-
-  $(".gallery-thumbnail").click(function() {
-    $(".gallery-absolute").toggleClass("gallery-thumbnail-clicked");
-    $(".gallery-thumbnail").toggleClass("gallery-thumbnail-styled");
-    $(".gallery-logo").toggle();
-    $(".gallery-base").fadeToggle(250);
-  });
+  openGallery();
 }
+
+/**
+ * all functions accessed through mouse hover interaction
+ */
 function mouseHoverEvents() {
   $(".gallery-absolute")
-  .mouseover(function() {
-    $(".gallery-logo").addClass("logo-opacity");
-    $(".gallery-logo").css("top", "60%");
-  })
-  .mouseout(function() {
-    $(".gallery-logo").removeClass("logo-opacity");
-    $(".gallery-logo").css("top", "75%");
-  });
+    .mouseover(function() {
+      $(".gallery-logo").addClass("logo-opacity");
+      $(".gallery-logo").css("top", "60%");
+    })
+    .mouseout(function() {
+      $(".gallery-logo").removeClass("logo-opacity");
+      $(".gallery-logo").css("top", "75%");
+    });
 }
 
 /**
@@ -105,32 +129,31 @@ function randomizeColor() {
   );
 }
 
+
+/**
+ * toggle the articles
+ */
 function openArticle() {
   for (let i = 0; i < articleList.length; i++) {
     $(articleList[i]).click(function() {
       $(articleList[i]).toggleClass("thumbnail-active");
       $(contentList[i]).fadeToggle(250);
       $(contentList[i]).css("min-height", $(document).height() + "px");
-
       $("hori-hr").hide();
-
-      console.log("Article Index is: " + i);
     });
     $(articleList[i])
       .mouseover(function() {
-        console.log("in " + i);
-
-        // $(articleList[i]).find('.thumbnail-logo').addClass('thumbnail-logo-styled')
         $(".thumbnail-logo").addClass("thumbnail-logo-styled");
       })
       .mouseout(function() {
-        console.log("out " + i);
-        // $(articleList[i]).find('.thumbnail-logo').removeClass('thumbnail-logo-styled')
         $(".thumbnail-logo").removeClass("thumbnail-logo-styled");
       });
   }
 }
 
+/**
+ * slideToggle the jobbs i've had
+ */
 function openJobb() {
   for (let j = 0; j < jobbList.length; j++) {
     $(jobbList[j])
@@ -143,6 +166,9 @@ function openJobb() {
   }
 }
 
+/**
+ * toggle the images in the gallery to be shown in the showcase
+ */
 function openGridItem() {
   for (let x = 0; x < gridItems.length; x++) {
     $(gridItems[x]).click(function() {
@@ -153,5 +179,17 @@ function openGridItem() {
   }
   $(".grid-module").click(function() {
     $(".grid-module").fadeToggle(100);
+  });
+}
+
+/**
+ * toggle the gadllery window
+ */
+function openGallery() {
+  $(".gallery-thumbnail").click(function() {
+    $(".gallery-absolute").toggleClass("gallery-thumbnail-clicked");
+    $(".gallery-thumbnail").toggleClass("gallery-thumbnail-styled");
+    $(".gallery-logo").toggle();
+    $(".gallery-base").fadeToggle(250);
   });
 }

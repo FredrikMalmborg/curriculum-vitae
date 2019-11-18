@@ -91,7 +91,7 @@
   background-repeat: no-repeat !important;
   background-position: center !important;
 
-  border: 0rem double var(--secondary);
+  border: 0rem solid var(--secondary);
 
   transition: 0.25s ease;
 }
@@ -115,7 +115,7 @@
   width: 100vw;
   height: 100vh;
 
-  background: #000a;
+  background: #000d;
 }
 .showcase {
   background-size: contain;
