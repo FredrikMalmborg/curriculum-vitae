@@ -17,9 +17,6 @@
   font-size: 4rem;
   color: var(--primary);
 }
-.contact-top h2 {
-
-}
 
 .contact-main {
   grid-area: contact;
