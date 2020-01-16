@@ -1,11 +1,11 @@
-.me {
-}
-.me-top > * {
+.me > * {
+  width: 100vw;
 }
 
 .me-top {
-  max-width: 80rem;
   margin: auto;
+
+  max-width: 80rem;
 
   display: grid;
   grid-template-areas:
@@ -19,6 +19,7 @@
   grid-area: header;
 
   color: var(--primary);
+
   font-size: 5rem;
 
   display: flex;
@@ -27,41 +28,46 @@
 }
 .me-header h2 {
   padding: 3rem;
+
   border-bottom: 0.2rem solid var(--primary);
 }
 .me-desc {
   grid-area: desc;
 
   width: 60%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .me-desc > * {
-  border-left: 0.5rem solid var(--primary);
-  border-bottom: 0.2rem solid var(--primary);
-
   margin: 0.5rem;
   padding: 0.5rem;
+
+  border-left: 0.5rem solid var(--primary);
+  border-bottom: 0.2rem solid var(--primary);
 }
 
 .myLinks {
-  border: none;
   width: 100%;
+
+  border: none;
 
   display: flex;
   justify-content: space-evenly;
 }
 .myLinks a img{
-  background: var(--primary);
-  padding: .5rem;
-  border: 1rem double var(--secondary);
-
   margin: .5rem;
+  padding: .5rem;
+
   width: var(--standard);
   height: var(--standard);
+
   max-width: 10rem;
   max-height: 10rem;
+
+  background: var(--primary);
+  border: 1rem double var(--secondary);
 }
 
 .interests {
@@ -72,15 +78,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-
-  /* text-align: right; */
 }
 .interests > *:not(h3) {
-  border-right: 2rem solid var(--primary);
-  border-bottom: 0.2rem solid var(--primary);
-
   margin: 0.2rem 0;
   padding: 0.5rem;
+
+  border-right: 2rem solid var(--primary);
+  border-bottom: 0.2rem solid var(--primary);
 }
 .interests h3 {
   background: var(--primary);
@@ -94,42 +98,42 @@
 /*-- programs i know*/
 
 .me-main h2 {
-  font-size: 2.5rem;
   padding: 1rem;
   margin: 5rem 0;
 
   background: var(--primary);
   color: var(--accent);
+
+  font-size: 2.5rem;
 }
 .me-main h3 {
-  font-size: 2rem;
   margin: 2rem;
   padding: 0.5rem;
+
   border-bottom: 0.2rem solid var(--primary);
+
+  font-size: 2rem;
 }
 
 .prog-list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
 }
-.prog > * {
-}
+
 .prog {
+  margin: 1rem;
+
+  max-width: 80rem;
+
   border: 0.1rem solid var(--primary);
 
-  /* background: #f345; */
-  max-width: 80rem;
   display: flex;
   justify-content: center;
-
-  margin: 1rem;
 }
 .prog-logo {
-  min-width: 5rem;
   width: 8vw;
-  /* border:1px solid #fff; */
+  min-width: 5rem;
 }
 .prog-logo::before {
   content: "";
@@ -138,23 +142,26 @@
 }
 
 .bar-holder {
-  border-left: 1rem solid var(--primary);
+  margin: 0.5rem;
 
   width: 70vw;
-  margin: 0.5rem;
+  
+  border-left: 1rem solid var(--primary);
 
   display: flex;
   align-items: center;
 }
 
 .bar {
-  background: var(--primary);
   margin: 0.5rem;
+
+  background: var(--primary);
 }
 .bar p {
+  padding: 0.2rem .5rem;
+
   text-align: right;
   font-size: 1rem;
-  padding: 0.2rem .5rem;
 }
 
 /* languages */
@@ -168,17 +175,18 @@
 }
 .lang {
   margin: 1rem;
-  display: flex;
 
+  display: flex;
   justify-content: center;
 }
 
 .lang h4 {
-  border: 0.5rem solid var(--primary);
-
+  padding: 0.5rem;
+  
   width: 10vw;
   min-width: 10rem;
-  padding: 0.5rem;
+  
+  border: 0.5rem solid var(--primary);
 
   text-align: center;
 }

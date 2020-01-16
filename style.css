@@ -1,26 +1,13 @@
-/* -- fonts --
-
-    font-family: 'Big Shoulders Text', cursive;
-    font-family: 'ZCOOL KuaiLe', cursive;
-    font-family: 'Wallpoet', cursive;
-    font-family: 'Righteous', cursive;
-    font-family: 'Supermercado One', cursive;
-    font-family: 'Abril Fatface', cursive;
-    font-family: 'Audiowide', cursive;
-
-*/
-
 :root {
   --standard: 15vw;
 }
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 
-  /* border: 1px solid red; */
+  box-sizing: border-box;
 }
 html {
   font-size: 100%;
@@ -28,24 +15,25 @@ html {
   font-family: "Audiowide", Arial, Helvetica, sans-serif;
 }
 body {
+  overflow-x: hidden;
+  
+  background: var(--primary);
+  color: var(--secondary);
+
   font-size: 1.1rem;
   letter-spacing: 0.02rem;
   line-height: 1.3rem;
-
-  overflow-x: hidden;
-
-  background: var(--primary);
-  color: var(--secondary);
 
   display: flex;
   flex-direction: column;
 }
 
 em {
+  padding: 0 0.5rem;
+
   border-bottom: 1px solid var(--secondary);
   background: var(--secondary);
   color: var(--primary);
-  padding: 0 0.5rem;
 }
 
 span {
@@ -56,13 +44,14 @@ span {
 
 .logo {
   position: absolute;
+  
+  margin: 0.5rem;
+
+  border: 0.5rem solid var(--secondary);
 
   text-align: center;
   text-transform: uppercase;
   font-size: 0.7rem;
-
-  border: 0.5rem solid var(--secondary);
-  margin: 0.5rem;
 
   transform: rotate(90deg) translateY(-100%);
   transform-origin: top left;
@@ -75,11 +64,10 @@ span {
 
 main {
   overflow: hidden;
-
 }
 
 .thumbnail-wrapper {
-  margin: 10rem auto 15rem;
+  margin: 10rem auto;
 
   width: 75%;
 
@@ -88,21 +76,21 @@ main {
   justify-content: space-between;
   align-items: center;
 }
-.article-wrapper {
-}
 
 hr {
   position: absolute;
 
   height: 0.5rem;
-  background: var(--secondary);
+
   border: none;
+  background: var(--secondary);
 }
 
 .hori-hr {
-  transform: rotate(0deg);
-  z-index: -1;
   width: 70%;
+
+  z-index: -1;
+  transform: rotate(0deg);
 }
 .thumb-absolute {
   position: relative;
@@ -119,59 +107,49 @@ hr {
 
 
 .thumbnail {
+  position: absolute;
+  z-index: 100;
+  
   width: 100%;
   height: 100%;
 
-  position: absolute;
-  z-index: 100;
-
   border: 0rem solid var(--primary);
-  background: var(--secondary);
-
   border-radius: 100%;
-  transition: .25s ease-in-out;
-
+  background: var(--secondary);
+  
   display: flex;
   justify-content: center;
   align-items: center;
-
+  
   overflow: hidden;
+  transition: .25s ease-in-out;
 }
 
 .thumbnail-logo {
   position: absolute;
-  color: var(--accent);
-  top: 0vh;
-  
+  top: 0;
   width: 100%;
+
+  color: var(--accent);
+  opacity: 0;
   
   text-align: center;
-  opacity: 0;
 
   transition: .25s ease;
 }
 
 .thumbnail-logo-styled {
   top: -5vh;
+
   opacity: 1;
 }
 
-.thumbnail img {
-  width: 130%;
-  display: none;
-  transform: rotate(-135deg);
-
-  contain: content;
-}
-
 .thumbnail-active {
-  border-radius: 0%;
-  z-index: 120;
-
-  /* background: var(--primary); */
   box-shadow: inset 0 0 0 .5rem var(--secondary);
   border: .5rem double var(--primary);
-
+  border-radius: 0%;
+  
+  z-index: 120;
   transform: rotate(135deg) scale(2);
 }
 
@@ -182,8 +160,9 @@ hr {
 
   min-width: 100%;
 
-  display: none;
   color: var(--accent);
   background: var(--secondary);
+
   z-index: 110;
+  display: none;
 }

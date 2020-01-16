@@ -15,7 +15,7 @@ const themes = {
     "#CC74A7", // soft cherry
     "#294699", // dark blue
     "#FFF0D9", // nier
-    "#000000"  // hacker 
+    "#000000" // hacker
   ],
   secondary: [
     "#333333", // dark gray
@@ -26,7 +26,7 @@ const themes = {
     "#99296A", // dark lilac
     "#748ACC", // soft blue
     "#837B6F", // nier
-    "#00E626"  // more hacker 
+    "#00E626" // more hacker
   ],
   accent: [
     "#ffffff", // white
@@ -37,10 +37,9 @@ const themes = {
     "#bbbbbb", // light gray
     "#E9E0FF", // marble
     "#423E38", // nier
-    "#008015"  // morer hacker
+    "#008015" // morer hacker
   ]
 };
-
 
 /**
  * declare the existence of all variables
@@ -57,17 +56,17 @@ let artIndex,
  * Execute all functions
  */
 function main() {
-  globalVariables();
   randomizeColor();
-  mouseClickEvents();
-  mouseHoverEvents();
-  keyEvent();
+  initiateGlobalVariables();
+  setupMouseClickEvents();
+  setupMouseHoverEvents();
+  setupKeyEvent();
 }
 
 /**
  * Establish all global veriables
  */
-function globalVariables() {
+function initiateGlobalVariables() {
   articleList = $("article").find(".thumbnail");
   contentList = $("article").find(".content");
   jobbList = $(document).find(".jobb");
@@ -77,7 +76,7 @@ function globalVariables() {
 /**
  * all functions accessed through mouse click interaction
  */
-function mouseClickEvents() {
+function setupMouseClickEvents() {
   openArticle();
   openJobb();
   openGridItem();
@@ -87,7 +86,7 @@ function mouseClickEvents() {
 /**
  * all functions accessed through mouse hover interaction
  */
-function mouseHoverEvents() {
+function setupMouseHoverEvents() {
   $(".gallery-absolute")
     .mouseover(function() {
       $(".gallery-logo").addClass("logo-opacity");
@@ -102,7 +101,7 @@ function mouseHoverEvents() {
 /**
  * all functions accessed through keyboard interaction
  */
-function keyEvent() {
+function setupKeyEvent() {
   $(document).keypress(function(event) {
     if (event.keyCode === 13) {
       randomizeColor();
@@ -128,7 +127,6 @@ function randomizeColor() {
     themes.accent[colorIndex]
   );
 }
-
 
 /**
  * toggle the articles

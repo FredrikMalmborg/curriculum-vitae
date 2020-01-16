@@ -14,4 +14,11 @@
 .gallery-grid > *:hover {
   border: 1rem solid var(--secondary);
 }
+.jobb h4:hover {
+  border: .5rem double var(--primary);
+  border-radius: 1rem;
+  border-bottom-left-radius: 0;
+  
+  background: var(--secondary);
+}
 

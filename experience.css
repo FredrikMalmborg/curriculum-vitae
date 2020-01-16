@@ -1,8 +1,10 @@
 .experience > * h2:not(.content-header) {
-  background: var(--primary);
-  color: var(--secondary);
   width: 100vw;
   padding: 0.5rem 2rem;
+
+  background: var(--primary);
+  color: var(--secondary);
+
   cursor: pointer;
 }
 
@@ -13,28 +15,30 @@
 
 .content-top {
   width: 60%;
-  margin: 10vh 0 0 auto;
   padding: 2rem;
+  margin: 10vh 0 0 auto;
 
   display: flex;
   flex-direction: column;
 }
 .content-header {
   padding: 1.5rem 0;
+
   border-bottom: 0.25rem solid var(--primary);
+  color: var(--primary);
 
   font-size: 4rem;
-  color: var(--primary);
   text-align: right;
 }
 .content-desc {
-  text-align: right;
-  border-right: 0.25rem solid var(--primary);
   padding: 1rem 1rem;
+
+  border-right: 0.25rem solid var(--primary);
+
+  text-align: right;
 }
 
 .content-main {
-
   width: 100%;
 
   display: flex;
@@ -49,33 +53,34 @@
   border-bottom: 1rem double var(--primary);
 }
 .education > *:not(h2) {
-  /* display: none; */
-
   padding: 2rem;
 }
 .collage p {
+  padding-left: 1rem;
+
   font-size: 1.5rem;
   line-height: 2rem;
-  padding-left: 1rem;
 }
 .collage span {
   margin: 1rem 0;
 
-  font-size: 1.2rem;
-  color: var(--primary);
   border-bottom: 1px solid var(--primary);
+  color: var(--primary);
+
+  font-size: 1.2rem;
 }
 .collage h3 {
   margin: 1rem 0;
-  font-size: 1.5rem;
 
   border-bottom: 0.2rem solid var(--primary);
+
+  font-size: 1.5rem;
 }
 .collage ul {
   list-style: circle;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, .8fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 0.8fr));
 }
 .collage ul li {
   margin: 0.2rem;
@@ -84,6 +89,7 @@
 /* JOBBS */
 .jobbs {
   margin-top: 10vh;
+
   list-style: none;
 }
 
@@ -94,7 +100,9 @@
 .jobb {
   margin: 1rem;
   margin-left: auto;
+
   max-width: 80rem;
+
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -103,31 +111,24 @@
   display: none;
 }
 .jobb h4 {
-  cursor: pointer;
-
-  font-size: 1.3rem;
   width: 20%;
 
   padding: 0.5rem;
+
+  border: 0.5rem double var(--secondary);
+  border-radius: 0;
   background: var(--primary);
 
-  border: .5rem double var(--secondary);
-  border-radius: 0;
-  
-  transition: 0.2s ease;
-}
-.jobb h4:hover {
-    border: .5rem double var(--primary);
-    border-radius: 1rem;
-    border-bottom-left-radius: 0;
+  font-size: 1.3rem;
 
-    background: var(--secondary);
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
 .jobb-content {
-    border: .5rem double var(--secondary);
-    border-radius: 1rem;
-    border-top-right-radius: 0;
+  border: 0.5rem double var(--secondary);
+  border-radius: 1rem;
+  border-top-right-radius: 0;
 
   margin: 0 20% 0 5%;
   padding: 1rem;
