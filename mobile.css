@@ -45,6 +45,9 @@ main {
   justify-content: center;
   align-items: center;
 }
+.thumb-absolute {
+  margin: 1vh;
+}
 .thumbnail {
   margin: 2rem 0;
 }
